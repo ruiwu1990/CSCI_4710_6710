@@ -1,4 +1,4 @@
-Example 34: This project is a hello world Flask example.
+Example 35: This project shows how to get a random number through a web service.
 
 ## Quick Start
 ### Local Test Setup
