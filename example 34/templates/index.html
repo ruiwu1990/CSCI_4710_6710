@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% block extrajs %}
+<link rel=stylesheet href="/static/codemirror_540/lib/codemirror.css">
+<link rel="stylesheet" href="/static/codemirror_540/addon/fold/foldgutter.css">
+<link rel="stylesheet" href="/static/codemirror_540/addon/hint/show-hint.css">
+
+<script type="text/javascript" src="/static/js/index.js"></script>
+<script src="/static/codemirror_540/lib/codemirror.js"></script>
+<script src="/static/codemirror_540/addon/edit/matchbrackets.js"></script>
+<script src="/static/codemirror_540/addon/hint/show-hint.js"></script>
+<script src="/static/codemirror_540/mode/xml/xml.js"></script>
+<script src="/static/codemirror_540/mode/css/css.js"></script>
+<script src="/static/codemirror_540/mode/python/python.js"></script>
+<script src="/static/codemirror_540/mode/clike/clike.js"></script>
+
+<style>
+  .CodeMirror { height: auto; border: 1px solid #ddd; }
+  .CodeMirror-scroll { max-height: 300px; }
+  .CodeMirror pre { padding-left: 7px; line-height: 1.25; }
+</style>
+{% endblock%}
+
+{% block title %}Index{% endblock %}
+
+{% block content %}
+
+
+<div id=demo>
+  <!-- <h2>This is CodeMirror</h2> -->
+  <div style="max-width: 70em">Python Code:<br>
+    <textarea id="code-python" name="python_code">
+# input your python code here
+import os, subprocess
+from pathlib import Path
+
+app_path = os.path.dirname(os.path.abspath(__file__))
+data_loc = 'database/'
+result_loc = 'results/'
+
+def get_file_extension(filename = ''):
+    '''
+    '''
+    return filename.split('.')[-1]
+
+def py_file_code_convention_analysis(filename = 'test.py'):
+    '''
+    this function analyzes python codes
+    '''
+    input_file = data_loc + filename
+    # run analysis
+    log_path = result_loc + 'python_analysis.log'
+    err_log_path = result_loc + 'python_analysis_err.log'
+
+
+    if not Path(log_path).is_file():
+        # file does not exist, need to create an empty one
+        open(log_path, 'a').close()
+
+    if not Path(err_log_path).is_file():
+        # file does not exist, need to create an empty one
+        open(err_log_path, 'a').close()
+
+    command = ['pylint', input_file]
+    with open(log_path, 'wb') as process_out, open(log_path, 'rb', 1) as reader, open(err_log_path, 'wb') as err_out:
+        process = subprocess.Popen(
+            command, stdout=process_out, stderr=err_out, cwd=app_path)
+    # wait until the process finishes
+    process.wait()
+    fp_log = open(log_path, 'r')
+    content = fp_log.read()
+    fp_log.close()
+    return content</textarea>
+
+    <button type="button" class="btn btn-success" id='evaluate_python_button_id'>Evaluate Python</button>
+</div>
+
+
+<div id=demo>
+  <!-- <h2>This is CodeMirror</h2> -->
+  <div style="max-width: 70em">Java Code:<br>
+    <textarea id="code-java" name="java_code">
+// input your Java code here
+
+public class test {
+    public static void main(String[] args){
+        IntListVer1 list1 = new IntListVer1();
+        IntListVer1 list2 = new IntListVer1(100);
+        
+        //equal when empty?
+        System.out.println("list1.equals(list2): " + list1.equals(list2));
+        System.out.println("list1: " + list1);
+        System.out.println("list2: " + list2);
+    }
+}</textarea>
+
+    <button type="button" class="btn btn-success" id='evaluate_java_button_id'>Evaluate Java</button>
+</div>
+
+<div class="form-group" style="max-width: 70em">
+  <label for="comment">Code Review:</label>
+  <textarea class="form-control" rows="10" width="200" id="code_review">{{ log_html }}</textarea>
+</div> 
+
+
+  
+{% endblock %}

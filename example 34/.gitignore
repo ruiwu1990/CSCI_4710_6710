@@ -1,0 +1,5 @@
+*.pyc
+
+database/*
+results/*
+__pycache__/*
