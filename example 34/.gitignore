@@ -1,5 +1,5 @@
 *.pyc
 
-database/*
-results/*
 __pycache__/*
+
+python_venv/*
