@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+  <head>
+    {% block head %}
+    <title>CSCI ECU</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  
+    {% block extrajs %}{% endblock%}
+    <title>{% block title %}{% endblock %} - Code Quality Check</title>
+    {% endblock %}
+  </head>
+  <body>
+    <!-- We have done a similar example: Example 13 -->
+    <nav class="navbar navbar-default">
+      <!-- .container-fluid class provides a full width container, spanning the entire width of the viewport -->
+      <div class="container-fluid">
+      <!-- .container class provides a responsive fixed width container -->
+      <!-- <div class="container"> -->
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">My Personal Website</a>
+        </div>
+        <!-- Used on a <ul> container that contains the list items with links inside a navigation bar -->
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="/">Index Page</a></li>
+          <li><a href="/background">Background</a></li>
+          <li><a href="#">Page 2</a></li>
+          <li><a href="#">Page 3</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div id="content">{% block content %}{% endblock %}</div>
+
+  </body>
+</html>
