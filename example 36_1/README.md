@@ -1,4 +1,4 @@
-Example 37: This project shows how to upload a CSV file.
+Example 36: This project shows how to avoid repeat the same code when you have a nevigation bar for multiple pages.
 
 ## Quick Start
 ### Local Test Setup

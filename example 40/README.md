@@ -1,4 +1,4 @@
-Example 37: This project shows how to upload a CSV file.
+Example 37: This project shows how to loop through an question array and dynamically generate a quiz website.
 
 ## Quick Start
 ### Local Test Setup
