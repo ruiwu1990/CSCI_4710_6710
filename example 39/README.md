@@ -1,4 +1,4 @@
-Example 37: This project shows how to loop through an question array and dynamically generate a quiz website.
+Example 37: This project shows how to organize the uploaded data in a table.
 
 ## Quick Start
 ### Local Test Setup

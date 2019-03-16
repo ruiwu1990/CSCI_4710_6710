@@ -25,10 +25,10 @@ def upload_file():
 		# if user does not select file, browser also
 		# submit an empty part without filename
 		if file.filename == '':
-			# This part should use flash to output information
 			log = 'Empty filename.'
 			return render_template('fail.html', log = log)
 		if file and util.allowed_file(file.filename):
+			# get filename in a safe way
 			filename = secure_filename(file.filename)
 			file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 			return render_template('success.html',filename=filename)
