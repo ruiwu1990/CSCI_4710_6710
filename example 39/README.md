@@ -1,9 +1,10 @@
-Example 37: This project shows how to organize the uploaded data in a table.
+Example 39: This project shows how to integrate a database in your web app.
 
 ## Quick Start
 ### Local Test Setup
 First, we need to install a Python 3 virtual environment with:
 ```
+sudo apt update
 sudo apt-get install python3-venv
 ```
 

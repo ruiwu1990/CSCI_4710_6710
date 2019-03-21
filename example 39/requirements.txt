@@ -1,4 +1,5 @@
 Flask==1.0.2
 Jinja2==2.10
 pandas
+psycopg2
 

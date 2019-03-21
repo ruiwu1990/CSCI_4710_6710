@@ -1,6 +1,6 @@
 # example is based on http://flask.pocoo.org/docs/1.0/patterns/fileuploads/
 import os
-from flask import Flask, request, render_template, redirect, url_for
+from flask import Flask, request, render_template, redirect
 from werkzeug.utils import secure_filename
 import util
 
@@ -36,6 +36,23 @@ def upload_file():
 			return render_template('success.html',column_names=column_names, data_part=data_part)
 	elif request.method == 'GET':
 		return render_template('index.html')
+
+@app.errorhandler(404)
+def page_not_found(e):
+	return render_template('404_error.html'), 404
+
+@app.errorhandler(500)
+def server_error(e):
+	print(e)
+	return render_template('500_error.html'), 500
+
+@app.route('/test_500')
+def fake_function():
+	'''
+	Need to test this wehn debug mode is off
+	'''
+	a = v * 5
+	return a
 
 if __name__ == '__main__':
 	app.debug = True
