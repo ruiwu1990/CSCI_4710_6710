@@ -1,9 +1,10 @@
-Example 37: This project shows how to loop through an question array and dynamically generate a quiz website.
+Example 39: This project shows how to interact with a database in your web app.
 
 ## Quick Start
 ### Local Test Setup
 First, we need to install a Python 3 virtual environment with:
 ```
+sudo apt update
 sudo apt-get install python3-venv
 ```
 
