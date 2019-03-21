@@ -1,13 +1,15 @@
 $(document).ready(function(){
 	$('#display_button').click(function(){
-		$.get( "/api/interact_user_table", function( data ) {
-		  $('#result_id').text(data);
+		$.get( "/api/get_user", function( data ) {
+		  var dropdown = $('#sel1');
+
+		  // TODO!!!!!
 		});
 	});
 	$('#delete_button').click(function(){
 		$.ajax({
-			url: '/api/interact_user_table',
-			type: 'DELETE_ALL',
+			url: '/api/delete_user/'+$('#sel1').find(":selected").text(),
+			type: 'MY_DELETE',
 			success: function(log){
 				console.log(log);
 			}

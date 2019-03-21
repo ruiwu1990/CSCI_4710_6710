@@ -1,4 +1,3 @@
-# example is based on http://flask.pocoo.org/docs/1.0/patterns/fileuploads/
 import os
 from flask import Flask, request, render_template, redirect
 from flask_sqlalchemy import SQLAlchemy
@@ -68,21 +67,18 @@ def index():
 	db.session.commit()
 	return render_template('index.html', log_html=User.query.all())
 
-@app.route('/api/interact_user_table', methods=['GET','DELETE_ALL'])
-def upload_file():
-	if request.method == 'GET':
-		# it is a little bit complex to jsonify the result
-		# we will learn in the future
-		return str(User.query.all())
-	# customize your request
-	elif request.method == 'DELETE_ALL':
-		# TODO delete all rows in your DB
-		User.query.filter(User.username=='john').delete()
-		# db.session.User.query().delete()
-		db.session.commit()
-		return 'delete all user rows'
 
+@app.route('/api/get_user', methods=['GET'])
+def get_user():
+	return util.parse_user(User.query.all())
 
+# how to customize your own request
+@app.route('/api/delete_user/<selected_user>', methods=['MY_DELETE'])
+def upload_file(selected_user=''):
+	# TODO delete selected rows
+	User.query.filter(User.username==selected_user).delete()
+	db.session.commit()
+	return 'delete the chosen user'
 
 # default page for 404 error
 @app.errorhandler(404)
