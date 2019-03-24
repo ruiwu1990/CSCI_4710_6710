@@ -28,6 +28,9 @@ def post_csv():
 	if file and util.allowed_file(file.filename):
 		# get filename in a safe way
 		filename = secure_filename(file.filename)
+		# check if the data folder exists, if not create one
+		if os.path.exists(app.config['UPLOAD_FOLDER']) == False:
+			os.makedirs(app.config['UPLOAD_FOLDER'])
 		file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 		return render_template('success.html',filename=filename)
 
