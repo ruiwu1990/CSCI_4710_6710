@@ -1,6 +1,5 @@
-# example is based on http://flask.pocoo.org/docs/1.0/patterns/fileuploads/
 import os
-from flask import Flask, request, render_template, redirect
+from flask import Flask, request, render_template
 from flask_sqlalchemy import SQLAlchemy
 import util
 
@@ -87,7 +86,7 @@ def fake_function():
 	return a
 
 if __name__ == '__main__':
-	app.debug = True
+	# app.debug = True
 	ip = '127.0.0.1'
 	app.run(host=ip)
 

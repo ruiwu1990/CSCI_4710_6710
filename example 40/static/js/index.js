@@ -1,9 +1,18 @@
 $(document).ready(function(){
 	$('#display_button').click(function(){
 		$.get( "/api/get_user", function( data ) {
+		  // based on https://www.codebyamir.com/blog/populate-a-select-dropdown-list-with-json
 		  var dropdown = $('#sel1');
 
-		  // TODO!!!!!
+		  dropdown.empty();
+		  dropdown.append('<option selected="true" disabled>Choose a User</option>');
+		  dropdown.prop('selectedIndex', 0);
+
+		  js_obj = JSON.parse(data);
+		  $.each(js_obj['all_user'], function (index, entry) {
+		  	// console.log(index);
+		    dropdown.append($('<option></option>').attr('value', entry.role_id).text(entry.username));
+		  })
 		});
 	});
 	$('#delete_button').click(function(){
