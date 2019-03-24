@@ -1,7 +1,6 @@
-import random
+# if a file extension is not listed, the system will not upload the file
+ALLOWED_EXTENSIONS = set(['csv'])
 
-def random_int():
-	'''
-	this function generates a random number between 1 and 10
-	'''
-	return random.uniform(1, 10)
+def allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS

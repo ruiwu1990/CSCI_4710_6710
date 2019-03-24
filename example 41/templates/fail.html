@@ -3,27 +3,19 @@
 <html>
 
 <head>
-    <title>CSCI ECU</title>
+    <title>Upload a CSV File</title>
     <meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-	<!-- this css file is from online source, author is Matias Meno -->
-	<link rel="stylesheet" type="text/css" href="/static/css/index.css">
-	<!-- this is the library we used for this example -->
-	<script src="/static/js/dropzone.js"></script>
     <script src="/static/js/index.js"></script>
 </head>
 
 
 <body>
-
-<form id="my_dropzone" action="/api/post_csv" method='post' class="dropzone">
-	<div class="dz-default dz-message">
-		<span>Drop a csv file here to upload</span>
-	</div>
-</form>
+    <h1>Upload new File</h1>
+    <p>Fail, because {{log}}</p>
 
 
 </body>
