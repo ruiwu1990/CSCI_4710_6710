@@ -1,4 +1,4 @@
-Example 41: This project shows how to process a CSV file based on input thresholds.
+Example 35: This project shows how to get a random number through a web service.
 
 ## Quick Start
 ### Local Test Setup

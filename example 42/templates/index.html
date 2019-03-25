@@ -17,11 +17,13 @@
 
 
 <form>
+	<!-- you have learned how to make this part more organized -->
   Lower threshold:
   <input type="number" value=0 step="0.01" id='lower_id'>
   Upper threshold:
   <input type="number" value=1 step="0.01" id='upper_id'>
-  <input type=submit value=Check id='check_button_id'>
+  <!-- BE CAREFUL!!!! if your type = 'submit', your get request won't work -->
+  <input type='button' value=Check id='check_button_id'>
 </form>
 
 <p id='result_p'></p>

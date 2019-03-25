@@ -13,10 +13,10 @@ app.config['DATA_FILE'] = UPLOAD_FOLDER + 'NRDC_data.csv'
 # you can check how to do it with Example 38
 app.config['COL_NAME'] = 'Temperature'
 
-@app.route('/api/process_csv/<lower_threshold>/<upper_threshold>', methods=['GET'])
+@app.route('/api/process_csv/<lower_threshold>/<upper_threshold>')
 def process_csv(lower_threshold='', upper_threshold=''):
 	qualified, outlier = util.threshold_process_method(app.config['DATA_FILE'], app.config['COL_NAME'], float(lower_threshold), float(upper_threshold))
-	print(qualified)
+	# print(qualified)
 	return json.dumps(qualified)
 
 @app.route('/')
