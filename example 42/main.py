@@ -17,7 +17,7 @@ app.config['COL_NAME'] = 'Temperature'
 def process_csv(lower_threshold='', upper_threshold=''):
 	qualified, outlier = util.threshold_process_method(app.config['DATA_FILE'], app.config['COL_NAME'], float(lower_threshold), float(upper_threshold))
 	# print(qualified)
-	return json.dumps(qualified)
+	return qualified
 
 @app.route('/')
 def index():
