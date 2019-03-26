@@ -9,10 +9,7 @@ $(document).ready(function(){
 		  dropdown.prop('selectedIndex', 0);
 
 		  js_obj = JSON.parse(data);
-		  $.each(js_obj['all_user'], function (index, entry) {
-		  	// console.log(index);
-		    dropdown.append($('<option></option>').attr('value', entry.role_id).text(entry.username));
-		  })
+		  // TODO use for loop to fill the select list
 		});
 	});
 	$('#delete_button').click(function(){
