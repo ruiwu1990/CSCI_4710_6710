@@ -9,7 +9,7 @@ def parse_team(query_result):
 	result_list = []
 	for element in query_result:
 		result_list.append({'team_name': element.name, 'id': element.id})
-	print({'all_teams':result_list})
+	# print({'all_teams':result_list})
 	return json.dumps({'all_teams':result_list})
 
 

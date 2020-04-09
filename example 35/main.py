@@ -4,6 +4,7 @@ import util
 
 app = Flask(__name__)
 
+# 127.0.0.1:5000/api/random_number
 @app.route('/api/random_number', methods=['GET'])
 def api_random_num():
 	'''
@@ -20,7 +21,7 @@ def api_random_num():
 	json_obj = json.dumps(json_dict)
 	return json_obj
 
-
+# 127.0.0.1:5000/
 @app.route('/')
 def index():
     # this is your index page

@@ -1,4 +1,4 @@
-
+# XXXX.csv
 # if a file extension is not listed, the system will not upload the file
 ALLOWED_EXTENSIONS = set(['csv'])
 

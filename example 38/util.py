@@ -13,6 +13,7 @@ def preview_csv(filename):
 	containing the first 5 lines of a CSV file
 	'''
 	# read csv file
+	# dataframe
 	df = pd.read_csv(filename)
 	# this will return the total length of your CSV file
 	total_len = len(df)

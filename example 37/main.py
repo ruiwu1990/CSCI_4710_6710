@@ -12,6 +12,7 @@ app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 @app.route('/', methods=['GET', 'POST'])
+# 127.0.0.1:5000/
 def upload_file():
 	if request.method == 'POST':
 		# request.file <class 'werkzeug.datastructures.FileStorage'>
