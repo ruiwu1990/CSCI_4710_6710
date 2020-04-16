@@ -7,7 +7,7 @@ $(document).ready(function(){
 
 		  $.each(js_obj['all_teams'], function (index, entry) {
 		  	// console.log(index);
-		  	$('#display_p').append($("<span style='white-space: pre-line'></span><br>").text(entry.team_name)); 
+		  	$('#display_p').append($("<span></span><br>").text(entry.team_name)); 
 		  });
 		 
 		});
@@ -19,17 +19,17 @@ $(document).ready(function(){
 		  $('#display_p').text('');
 
 		  var js_obj = JSON.parse(data);
-		  $('#display_p').append($("<span style='white-space: pre-line'></span><br>").text('Fist Day:'));
+		  $('#display_p').append($("<span></span><br>").text('Fist Day:'));
 		  $.each(js_obj['first_day'], function (index, entry) {
 		  	// console.log(index);
-		  	$('#display_p').append($("<span style='white-space: pre-line'></span><br>").text(entry.team.team_name+', '+entry.start_time));
+		  	$('#display_p').append($("<span></span><br>").text(entry.team.team_name+', '+entry.start_time));
 		    
 		  });
 
-		  $('#display_p').append($("<span style='white-space: pre-line'></span><br>").text('Second Day:'));
+		  $('#display_p').append($("<span></span><br>").text('Second Day:'));
 		  $.each(js_obj['second_day'], function (index, entry) {
 		  	// console.log(index);
-		  	$('#display_p').append($("<span style='white-space: pre-line'></span><br>").text(entry.team.team_name+', '+entry.start_time));
+		  	$('#display_p').append($("<span></span><br>").text(entry.team.team_name+', '+entry.start_time));
 		    
 		  });
 		});

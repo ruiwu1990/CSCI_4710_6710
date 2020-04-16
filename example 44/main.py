@@ -82,7 +82,7 @@ def index():
 
 @app.route('/api/get_team', methods=['GET'])
 def get_team():
-	# print(Team.query.all())
+	print(Team.query.all())
 	return util.parse_team(Team.query.all())
 
 @app.route('/api/generate_presentation_order', methods=['GET'])

@@ -21,6 +21,7 @@ def schedule(query_result, start_time1, start_time2, max_team_num, presentation_
 	for element in query_result:
 		result_list.append({'team_name': element.name, 'id': element.id})
 	# randomly shuffle the team order
+	# arrary of dictionary [{},{},...]
 	shuffle(result_list)
 
 	# TODO check if number of team is less than max_team_num
@@ -31,6 +32,7 @@ def schedule(query_result, start_time1, start_time2, max_team_num, presentation_
 		# json cannot handle time directly
 		first_day.append({'team':result_list[i], 'start_time': str(cur_time)})
 		cur_time = cur_time + timedelta(minutes=presentation_time)
+		# first_day is an array of dictionary [{'team':{'team_name': element.name, 'id': element.id}}, ...]
 
 	# second day schedule
 	second_day = []
