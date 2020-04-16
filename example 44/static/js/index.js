@@ -7,7 +7,7 @@ $(document).ready(function(){
 
 		  $.each(js_obj['all_teams'], function (index, entry) {
 		  	// console.log(index);
-		  	$('#display_p').append($("<span style='white-space: pre-line'></span><br>").text(entry.team_name));
+		  	$('#display_p').append($("<span style='white-space: pre-line'></span><br>").text(entry.team_name)); 
 		  });
 		 
 		});

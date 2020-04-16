@@ -32,6 +32,8 @@ def upload_file():
 			# get filename in a safe way
 			filename = secure_filename(file.filename)
 			file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+			# a = python dict
+			# b = json.dump(a)
 			column_names, data_part = util.preview_csv(app.config['UPLOAD_FOLDER']+filename)
 			return render_template('success.html',column_names=column_names, data_part=data_part)
 	elif request.method == 'GET':

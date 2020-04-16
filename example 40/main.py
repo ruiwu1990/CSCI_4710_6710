@@ -65,6 +65,7 @@ def index():
 	# commit changes:
 	db.session.add_all([admin_role, mod_role, user_role, user_john, user_susan, user_david])
 	db.session.commit()
+	print(User.query.all())
 	return render_template('index.html', log_html=User.query.all())
 
 

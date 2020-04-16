@@ -6,10 +6,15 @@ $(document).ready(function(){
 
 		  dropdown.empty();
 		  dropdown.append('<option selected="true" disabled>Choose a User</option>');
+		  // .prop is used to change a property or an attribute of a HTML element
+		  // selectedIndex is used to show which option is selected
 		  dropdown.prop('selectedIndex', 0);
 
 		  js_obj = JSON.parse(data);
+		  total_len = js_obj['all_user'].length;
 		  // TODO use for loop to fill the select list
+		 
+		  
 		});
 	});
 	$('#delete_button').click(function(){

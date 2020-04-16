@@ -5,6 +5,7 @@ $(document).ready(function(){
 		
 		$.get( get_url, function( data ) {
 		  data_obj = JSON.parse(data);
+		  $('#result_p').text(JSON.stringify(data))
 		  console.log(data_obj['Temperature']);
 		});
 		
