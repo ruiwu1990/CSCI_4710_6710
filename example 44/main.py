@@ -61,9 +61,19 @@ def index():
 	team14 = Team(name='Team14')
 	team15 = Team(name='Team15')
 	team16 = Team(name='Team16')
+	team17 = Team(name='Team17')
+	team18_1 = Team(name='Team18_1')
+	team18_2 = Team(name='Team18_2')
+	g_team1 = Team(name='g_Team1')
+	g_team2 = Team(name='g_Team2')
+	g_team3 = Team(name='g_Team3')
+	g_team4 = Team(name='g_Team4')
+	g_team5 = Team(name='g_Team5')
 	# commit changes:
 	db.session.add_all([team1, team2, team3, team4, team5, team6, team7, team8,
-						team9, team10, team11, team12, team13, team14, team15, team16])
+						team9, team10, team11, team12, team13, team14, team15, 
+						team16, team17, team18_1, team18_2, g_team1, g_team2, 
+						g_team3, g_team4, g_team5])
 	db.session.commit()
 
 	log = 'this app can generate team presentation order!'
@@ -77,7 +87,7 @@ def get_team():
 
 @app.route('/api/generate_presentation_order', methods=['GET'])
 def random_order_team():
-	return util.schedule(Team.query.all(), datetime(2019, 4, 18, 18, 15), datetime(2019, 4, 23, 18, 15), 8, 9)
+	return util.schedule(Team.query.all(), datetime(2020, 4, 23, 18, 00), datetime(2020, 4, 28, 18, 00), 12, 6)
 
 
 # default page for 404 error

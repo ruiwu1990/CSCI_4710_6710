@@ -13,7 +13,7 @@ app.config['META_FILE'] = UPLOAD_FOLDER + 'meta_data.txt'
 
 @app.route('/api/save', methods=['POST'])
 def process_csv():
-	input_values = request.form
+	# input_values = request.form
 	result_str = 'First Name:' + request.form['first_name'] + '\n' + \
 				 'Last Name:' + request.form['last_name'] + '\n' + \
 				 'Email:' + request.form['email']
