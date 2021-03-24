@@ -19,7 +19,7 @@ $(document).ready(function(){
 		  $('#display_p').text('');
 
 		  var js_obj = JSON.parse(data);
-		  $('#display_p').append($("<span></span><br>").text('Fist Day:'));
+		  $('#display_p').append($("<span></span><br>").text('First Day:'));
 		  $.each(js_obj['first_day'], function (index, entry) {
 		  	// console.log(index);
 		  	$('#display_p').append($("<span></span><br>").text(entry.team.team_name+', '+entry.start_time));
