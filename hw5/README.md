@@ -36,4 +36,16 @@ Survey data can be found at <mark>data/we_are_not_alone_no_nan.csv</mark>, -1 is
 If your data is stored in sqlalchemy and want to output data as a python dictionary, here is [a possible solution](https://stackoverflow.com/questions/1958219/convert-sqlalchemy-row-object-to-python-dict).
 
 ### Requirements
-If less than 10 answers, place in one table without clustering
+- Create a web app including backendand and frontend to show user survey results using tables
+- Choose any database (such as PostgreSQL and sqlalchemy) you like to store [user survey data](data/we_are_not_alone_no_nan.csv).
+- Retrieve user suvey data from your database and split data into groups
+	- Step 1, split data based on age and gender
+		- Group 1: young (<=35) male
+		- Group 2: middle-aged or old (>=36) male
+		- Group 3: young (<=35) female
+		- Group 2: middle-aged or old (>=36) female
+	- Step 2, split data groups generated from Step 1 into based smaller groups based on countries, such as US groups and Canada groups.
+	- Step 3, check which groups from Step 2 have more than 10 elements. If yes, use KMeans (check util.cluster_user_data and util.split_user_data) to split them into subgroups.
+- Visualize all the groups with tables on the frontend
+
+

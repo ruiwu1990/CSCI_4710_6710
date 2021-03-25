@@ -27,6 +27,3 @@ def split_user_data(input_data, labels, n_clusters=3):
 		result_list.append([input_data[i] for i in tmp_indices])
 
 	return result_list
-
-
-	
