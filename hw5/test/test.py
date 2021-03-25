@@ -1,11 +1,14 @@
-from flask import Flask, render_template
+from sklearn.cluster import KMeans
+import numpy as np
+
+# this is how you should find files from parent folder in python3
+import os, sys
+currentdir = os.path.dirname(os.path.realpath(__file__))
+parentdir = os.path.dirname(currentdir)
+sys.path.append(parentdir)
+
 import util
 
-
-app = Flask(__name__)
-
-# evil gloabl variable...
-# the data should be obtained from your db
 sample_data = {
 	'user_data':[
 		# index	What country do you live in?	How old are you?	What is your gender?	To what extent do you feel FEAR due to the coronavirus?	To what extent do you feel ANXIOUS due to the coronavirus?	To what extent do you feel ANGRY due to the coronavirus?	To what extent do you feel HAPPY due to the coronavirus?	To what extent do you feel SAD due to the coronavirus?	Which emotion is having the biggest impact on you?	What makes you feel that way?	What brings you the most meaning during the coronavirus outbreak?	What is your occupation?  
@@ -22,18 +25,26 @@ sample_data = {
 	]
 }
 
-column_names = ["index","What country do you live in?","How old are you?","What is your gender?","To what extent do you feel FEAR due to the coronavirus?","To what extent do you feel ANXIOUS due to the coronavirus?","To what extent do you feel ANGRY due to the coronavirus?","To what extent do you feel HAPPY due to the coronavirus?","To what extent do you feel SAD due to the coronavirus?","Which emotion is having the biggest impact on you?","What makes you feel that way?","What brings you the most meaning during the coronavirus outbreak?","What is your occupation?"]
+labels = util.cluster_user_data(sample_data['user_data'])
+print("predicted labels are: ", labels)
 
-@app.route('/')
-def index():
-    labels = util.cluster_user_data(sample_data['user_data'])
-    return render_template('index.html', labels_html=labels, column_html=column_names, data_html=sample_data['user_data'])
+split_result = util.split_user_data(sample_data['user_data'], labels)
+print("Split original user data to:")
+print(split_result)
+print("Split_result length is: ", len(split_result))
 
 
-if __name__ == '__main__':
-	# set debug mode
-    app.debug = True
-    # your local machine ip
-    ip = '127.0.0.1'
-    app.run(host=ip)
+# def cluster_user_data(input_data, emotional_col_start=4, emotional_col_end=9, n_clusters=3):
+# 	'''
+# 	This function cluster user data based on KMeans algorithm
+# 	By default, it will split your data into three groups
+# 	'''
+# 	# collect answers for five emotional questions
+# 	# which are located from 4th col to 9th col
+# 	emotional_data = [i[emotional_col_start:emotional_col_end] for i in input_data['user_data']]
+# 	# use kmeans to cluster data
+# 	kmeans = KMeans(n_clusters).fit(emotional_data)
+# 	# return cluster labels
+# 	return kmeans.labels_
 
+	

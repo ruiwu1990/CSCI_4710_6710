@@ -29,3 +29,11 @@ Then you can start the server with:
 ```
 python3 main.py
 ```
+
+### Data
+Survey data can be found at <mark>data/we_are_not_alone_no_nan.csv</mark>, -1 is used to represent NAN (i.e. missing data)
+
+If your data is stored in sqlalchemy and want to output data as a python dictionary, here is [a possible solution](https://stackoverflow.com/questions/1958219/convert-sqlalchemy-row-object-to-python-dict).
+
+### Requirements
+If less than 10 answers, place in one table without clustering
