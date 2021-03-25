@@ -46,6 +46,6 @@ If your data is stored in sqlalchemy and want to output data as a python diction
 		- Group 2: middle-aged or old (>=36) female
 	- Step 2, split data groups generated from Step 1 into based smaller groups based on countries, such as US groups and Canada groups.
 	- Step 3, check which groups from Step 2 have more than 10 elements. If yes, use KMeans (check util.cluster_user_data and util.split_user_data) to split them into subgroups.
-- Visualize all the groups with tables on the frontend
+- Visualize all the groups with tables on the frontend (check sample code in hw5)
 
 
