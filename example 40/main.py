@@ -82,6 +82,7 @@ def upload_file(selected_user=''):
 	return 'delete the chosen user'
 
 # default page for 404 error
+# e.g. undefined service: http://127.0.0.1:5000/aa
 @app.errorhandler(404)
 def page_not_found(e):
 	return render_template('404_error.html'), 404

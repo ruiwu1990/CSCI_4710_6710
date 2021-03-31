@@ -34,17 +34,3 @@ print(split_result)
 print("Split_result length is: ", len(split_result))
 
 
-# def cluster_user_data(input_data, emotional_col_start=4, emotional_col_end=9, n_clusters=3):
-# 	'''
-# 	This function cluster user data based on KMeans algorithm
-# 	By default, it will split your data into three groups
-# 	'''
-# 	# collect answers for five emotional questions
-# 	# which are located from 4th col to 9th col
-# 	emotional_data = [i[emotional_col_start:emotional_col_end] for i in input_data['user_data']]
-# 	# use kmeans to cluster data
-# 	kmeans = KMeans(n_clusters).fit(emotional_data)
-# 	# return cluster labels
-# 	return kmeans.labels_
-
-	
