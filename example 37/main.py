@@ -1,4 +1,6 @@
 # example is based on http://flask.pocoo.org/docs/1.0/patterns/fileuploads/
+# about config parameters, you can define them externally
+# here is a tutorial: https://pythonise.com/series/learning-flask/flask-configuration-files
 import os
 from flask import Flask, request, render_template, redirect, url_for
 from werkzeug.utils import secure_filename
