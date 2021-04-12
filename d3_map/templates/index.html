@@ -27,7 +27,7 @@
                                 // you can use show function to show a hide element
                                 $("#container").hide();
                                 console.log(status);
-                                $("#result_p").text(data);
+                                $("#result_p").text(JSON.parse(data)['user_data']);
                             });
                         });
                     }

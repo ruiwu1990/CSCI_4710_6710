@@ -32,7 +32,8 @@ def post_csv():
 		if os.path.exists(app.config['UPLOAD_FOLDER']) == False:
 			os.makedirs(app.config['UPLOAD_FOLDER'])
 		file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-		return render_template('success.html',filename=filename)
+		return "Success. "+filename+" has been uploaded."
+	
 
 @app.route('/')
 def index():

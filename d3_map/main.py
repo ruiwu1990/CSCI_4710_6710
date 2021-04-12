@@ -29,9 +29,11 @@ def query_survey_results(country_name=''):
 			]
 		}
 
-		return json.dumps(survey_query_data)
+		
 	else:
-		return country_name+" does not have any survey data"
+		survey_query_data = {'user_data':[country_name+" does not have any survey data"]}
+		
+	return json.dumps(survey_query_data) 
 
 
 @app.route('/')
