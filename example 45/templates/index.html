@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>CSCI ECU</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+
+
+<body>
+
+
+    <p>{{log_html}}</p>
+    <!-- using ajax -->
+    <button onclick='send_data()'>Click me!</button>
+    <!-- using post -->
+    <button onclick='send_data2()'>Click me 2!</button>
+    <script>
+    function send_data(){
+        var data = {"send_data": "this is the data from front end"}
+        $.ajax({
+            type: 'POST',
+            contentType: 'application/json',
+            url: '/send_data',
+            dataType : 'json',
+            data : JSON.stringify(data),
+            success : (data) => {
+                console.log('send_data response: ' + data)
+            },
+            error : (data) => {
+                console.log(data)
+            }
+        });
+    }
+
+    function send_data2(){
+        var myData = "Data posted with $.post method.";
+        $.post("/receivedata", {"myData": myData});
+    }
+    </script>
+
+
+</body>
+</html>
