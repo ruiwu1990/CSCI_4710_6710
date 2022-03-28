@@ -1,4 +1,4 @@
-Example 4: This project shows how we can connect PostgreSQL with flask and show SELECT results in a HTML table.
+Example 40_1: This project shows how we can connect PostgreSQL with flask and show SELECT results in a HTML table.
 
 ## Quick Start
 ### Local Test Setup
