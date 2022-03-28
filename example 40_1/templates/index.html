@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>CSCI ECU</title>
+    <style>
+    table, th, td {
+      border:1px solid black;
+    }
+    </style>
+</head>
+
+
+<body>
+     <!-- a normal HTML table -->
+     <table>
+      <!-- tr represents a row -->
+      <tr>
+        <!-- th is the col for header row -->
+        <th>University</th>
+        <th>Country</th>
+      </tr>
+      <tr>
+        <!-- td is the column for a normal row -->
+        <td>ECU</td>
+        <td>US</td>
+      </tr>
+      <tr>
+        <td>UNR</td>
+        <td>US</td>
+      </tr>
+    </table> 
+
+    <p>Dynamically create a table for SQL results</p>
+    
+    <table>
+      <!-- tr represents a row -->
+      <tr>
+        {% for col_name in table_title %}
+            <th>{{col_name}}</th>
+        {% endfor %}
+      </tr>
+      {% for row in sql_table %}
+      <tr>
+        {% for col in row %}
+        <td>{{col}}</td>
+        {% endfor %}
+      </tr>
+      {% endfor %}
+ 
+    </table> 
+
+
+</body>
+</html>

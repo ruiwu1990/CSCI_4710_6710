@@ -1,0 +1,7 @@
+*.pyc
+
+# your interpreter will compile python code and store the compiled files in this folder
+# this makes your program starts faster, but you do not need to upload it
+__pycache__/*
+
+python_venv/*

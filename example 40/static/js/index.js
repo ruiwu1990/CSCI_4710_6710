@@ -13,7 +13,7 @@ $(document).ready(function(){
 		  js_obj = JSON.parse(data);
 		  total_len = js_obj['all_user'].length;
 		  // TODO use for loop to fill the select list
-		 
+		  
 		  
 		});
 	});
